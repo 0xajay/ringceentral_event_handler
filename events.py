@@ -20,6 +20,7 @@ with open("call_counter.txt","r") as g:
     call_counter = g.readlines()[0]
 
 while True:
+    start_time = time.time()
     result,token = get_messages()
     # device_list = get_devices(token)
     call_logs = get_call_logs(token)
@@ -100,5 +101,7 @@ while True:
                     call_counter = call["sessionId"]
                     with open("call_counter.txt","w") as g:
                         g.write(str(call["sessionId"]))
+
+    print("\n\n--- %s seconds ---" % (time.time() - start_time))
 
     time.sleep(30)

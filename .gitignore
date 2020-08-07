@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 run.sh
+counter.txt
+call_counter.txt
 
 # Distribution / packaging
 .Python
